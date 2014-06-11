@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'disco';
+  font-style: normal;
+  font-weight: normal;
+  src: local('disco'), url('discodeckl.ttf') format('truetype');
+}
+
+body {
+  font-family: Gill Sans;
+  background-image:url('starfield.gif');
+}
+
+#container {
+  width: 100%;
+}
+
+#scene {
+  width: 50%;
+  margin: 0 auto;
+  height: 400px;
+  padding: 10px;
+}
+
+#header {
+  color:white;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 45px;
+  font-size: 2em;
+  text-align: center;
+}
+
+#moon {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  left: -600;
+  height: 300px;
+  width: 300px;
+  -webkit-animation: moon 15s 1s linear infinite;
+}
+
+.one-tweet{
+  width: 100%;
+  color: white;
+  background-color: #95267e;
+  position: absolute;
+  padding: 30px;
+  box-shadow: 2px 2px 1px white;
+}
+
+#moon img {
+  opacity: 1;
+  height: 300px;
+  width: 300px;
+
+}
+
+#footer {
+  position: absolute;
+  bottom: 20px;
+  height: 1.3em;
+  color: white;
+  padding: 3px 10px;
+  left: 20px;
+}
+
+#footer a {
+  color: white;
+}
+
+#footer a:hover{
+  color: #a41e44;
+  }
+
+
+#buttonz {
+  width: 50%;
+  margin-left: 25%;
+  background-color: white;
+}
+
+#buttonz div {
+  margin: 0 auto;
+  height: 90px;
+  margin: 30px;
+  display: inline-block;
+  padding: 30px;
+  background-color: red;
+  text-align: center;
+  font-size: 4em;
+  overflow:none;
+}
+
+#buttonz div:hover {
+  background-color: pink;
+}
+
+#tweetbox {
+  position: relative;
+  color: white;
+  font-size: 3em;
+  width: 40%;
+  margin-left: 30%;
+  text-align: center;
+}
+
+@-webkit-keyframes moon {
+    1% {
+      opacity: .01;
+    }
+
+
+    50%{
+      opacity: 1;
+    }
+   99% {
+      opacity: .01;
+    }
+
+   100% {
+    -webkit-transform: translate(2600px, 600px);
+
+  }
+}
