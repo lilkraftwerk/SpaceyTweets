@@ -15,7 +15,7 @@ Tweeter.prototype.randomTweetNumber = function() {
 }
 
 Tweeter.prototype.getRandomTweet = function() {
-    return this.tweets[this.randomTweetNumber()].text
+    return this.tweets[this.randomTweetNumber()]
 }
 
 
@@ -65,7 +65,6 @@ function getAjaxTweets(username) {
         console.log(data)
         window[username] = new Tweeter(username, data)
         startLoopOfTweets(window[username])
-
     });
 }
 
@@ -82,7 +81,12 @@ function addTweetInRandomSpot(tweet) {
     toPrepend.css({
         transform: 'rotate(' + randomRotation + 'deg)'
     });
-    toPrepend.html(tweet)
+    var tweetWithLink = "<a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a>"
+    console.log(tweetWithLink)
+    toPrepend.html(tweetWithLink)
+    console.log('here')
+    console.log(toPrepend)
+    var test = "hi there hi there"
     $("#tweetbox").append(toPrepend);
 }
 

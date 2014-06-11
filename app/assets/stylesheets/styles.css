@@ -49,6 +49,11 @@ body {
   box-shadow: 2px 2px 1px white;
 }
 
+.one-tweet a{
+  color: white;
+  text-decoration: none;
+}
+
 #moon img {
   opacity: 1;
   height: 300px;
