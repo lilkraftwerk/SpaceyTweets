@@ -15,7 +15,7 @@ Tweeter.prototype.randomTweetNumber = function() {
 }
 
 Tweeter.prototype.getRandomTweet = function() {
-    return this.tweets[this.randomTweetNumber()]
+    return this.tweets[this.randomTweetNumber()].text
 }
 
 
@@ -45,8 +45,29 @@ function bindButtons() {
         hideButtons()
         startLoopOfTweets(lilb)
     })
+    $("#ajax").on("click", function() {
+        $("#moon").show()
+        hideButtons()
+        var username = $("#usernamebox").val()
+        console.log(username)
+        var tweetsArray = getAjaxTweets(username);
+
+
+    })
 }
 
+function getAjaxTweets(username) {
+    $.ajax({
+        url: "tweetz/" + username,
+        dataType: "JSON",
+        type: "GET"
+    }).done(function(data) {
+        console.log(data)
+        window[username] = new Tweeter(username, data)
+        startLoopOfTweets(window[username])
+
+    });
+}
 
 
 function addTweetInRandomSpot(tweet) {
@@ -64,22 +85,6 @@ function addTweetInRandomSpot(tweet) {
     toPrepend.html(tweet)
     $("#tweetbox").append(toPrepend);
 }
-
-// function addTweetInRandomSpot(tweet) {
-//     zeeIndex += 1;
-//     var randomRotation = Math.floor(Math.random() * 41) - 20;
-//     var randomLeft = Math.floor(Math.random() * 701) - 350;
-//     var randomTop = Math.floor(Math.random() * 800);
-//     var toPrepend = $("<div>", {
-//         class: "one-tweet"
-//     })
-//     toPrepend.css("top", randomTop).css('left', randomLeft)
-//     toPrepend.css({
-//         transform: 'rotate(' + randomRotation + 'deg)'
-//     });
-//     toPrepend.html(tweet)
-//     $("#tweetbox").append(toPrepend);
-// }
 
 function layoverTest() {
     $('#tweetbox').append(lilb.getRandomTweet());
