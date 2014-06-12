@@ -50,8 +50,8 @@ function hideButtons() {
 
 function bindButtons() {
     $("#ajax").on("click", function() {
-        var username = $("#usernamebox").val()
-        var tweetsArray = getAjaxTweets(username);
+        var searchterm = $("#searchbox").val()
+        var tweetsArray = getAjaxTweets(searchterm);
     })
     $(".option").on("click", function(){
         setSearchType(this.id)
@@ -64,11 +64,12 @@ function displayUserProfilePicture(tweeter){
     $("#picturebox").append(" tweets from <a href='" + tweeter.tweets[0].user.screen_name + "'>@" + tweeter.name + "</a> ")
 }
 
-function getAjaxTweets(username) {
+function getAjaxTweets(searchterm) {
     $.ajax({
-        url: "tweetz/" + username,
+        url: "tweetz/" + searchterm,
         dataType: "JSON",
-        type: "GET"
+        type: "GET",
+        data: { searchtype: search }
     }).success(function(data) {
         hideButtons()
         window[username] = new Tweeter(username, data)

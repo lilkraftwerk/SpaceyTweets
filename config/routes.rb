@@ -1,7 +1,7 @@
 Spacetweets::Application.routes.draw do
 
   root :to => "space#index"
-  get '/tweetz/:username', :to => "space#tweetz"
+  get '/tweetz/:searchterm', :to => "space#tweetz"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

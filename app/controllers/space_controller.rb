@@ -3,7 +3,7 @@ class SpaceController < ApplicationController
   end
 
   def tweetz
-    @tweets = Tweet.get_tweets_from_user(params[:username])
+    @tweets = Tweet.get_tweets(params)
     render json: @tweets
   end
 end
