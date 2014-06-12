@@ -48,6 +48,12 @@ function hideButtons() {
     $("#choices").hide()
 }
 
+function showButtons() {
+    $("#buttonz").show()
+    $("#header").show()
+    $("#choices").show()
+}
+
 function bindButtons() {
     $("#ajax").on("click", function() {
         var searchterm = $("#searchbox").val()
@@ -80,7 +86,7 @@ function getAjaxTweets(searchterm) {
 }
 
 function failedAjaxCall(){
-    $("#tweetbox").prepend("Oops. Twitter didn't like that. Check your spelling!")
+    $("#tweetbox").html("Oops. Twitter didn't like that. Check your spelling!")
 }
 
 function addTweetInRandomSpot(tweet) {
@@ -95,12 +101,12 @@ function addTweetInRandomSpot(tweet) {
     toPrepend.css({
         transform: 'rotate(' + randomRotation + 'deg)'
     });
-    var tweetWithLink = "<p><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a></p>"
+    var tweetWithLink = "<p><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a></p>" + "<div class='username-on-tweet'>@" + tweet.user.screen_name + "</div>"
     toPrepend.html(tweetWithLink)
     var test = "hi there hi there"
     $("#tweetbox").append(toPrepend);
 }
 
-var tweetLoadingMessages = [
-    ""
-    ]
+function formatTweet(tweet){
+
+}

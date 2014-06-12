@@ -16,7 +16,7 @@ body {
 
 #header {
   color:white;
-  text-shadow: 2px 2px 1px #F7FD15;
+  text-shadow: 2px 2px 1px black;
   font-family: 'Orbitron', sans-serif;
   width: 50%;
   margin-left: 25%;
@@ -35,6 +35,14 @@ input {
   border: 1px solid black;
 }
 
+.username-on-tweet {
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  text-shadow: 2px 2px 0px black;
+
+}
+
 #moon {
   height: 300px;
   width: 300px;
@@ -50,8 +58,9 @@ input {
   background-image: url('deathstar.png');
   background-repeat: no-repeat;
   position: absolute;
-  padding: 30px;
-  font-size: .6em;
+  padding: 0px;
+  font-size: .5em;
+  margin: 0 auto;
 }
 
 .one-tweet p {
@@ -130,7 +139,9 @@ input {
    width: 40%;
   background-color: white;
   margin-left: 30%;
+  color: white;
   text-align: center;
+  text-shadow: 2px 2px 0px black;
 }
 
 #buttonz {
@@ -197,10 +208,11 @@ input {
 #tweetbox {
   /*position: relative;*/
   color: white;
-  font-size: 3em;
+  font-size: 2em;
   width: 50%;
-  margin-left: 30%;
+  margin-left: 25%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 @-webkit-keyframes moon {
