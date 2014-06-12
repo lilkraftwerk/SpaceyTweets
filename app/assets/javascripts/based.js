@@ -1,6 +1,7 @@
 $(document).ready(function() {
     bindButtons()
     zeeIndex = 10
+    search = "username"
 })
 
 function Tweeter(name, tweets) {
@@ -29,6 +30,18 @@ function putTweetOnDom(tweet) {
     $("#tweetbox").html(tweet)
 }
 
+
+
+function setSearchType(id){
+    search = id;
+    if (id == "username")
+        $("#current-search").html("@")
+    else if (id == "hashtag")
+        $("#current-search").html("#")
+    else if (id == "search")
+        $("#current-search").html("search for").css("value", "search")
+}
+
 function hideButtons() {
     $("#buttonz").hide()
     $("#header").hide()
@@ -39,6 +52,9 @@ function bindButtons() {
     $("#ajax").on("click", function() {
         var username = $("#usernamebox").val()
         var tweetsArray = getAjaxTweets(username);
+    })
+    $(".option").on("click", function(){
+        setSearchType(this.id)
     })
 }
 

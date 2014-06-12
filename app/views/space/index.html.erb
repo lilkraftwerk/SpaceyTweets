@@ -1,35 +1,37 @@
 <html>
     <head>
         <title></title>
-
     </head>
     <body>
         <div id="container">
-                <div id="moon">
-                    <%= image_tag('moon.png') %>
-                </div>
-            <div id="header">Starlite Tweets</div>
-
-                <div id="tweetbox"></div>
+            <div id="moon">
+                <%= image_tag('moon.png') %>
+            </div>
+            <div id="header">
+                SpaceTweets
+            </div>
+            <div id="tweetbox"></div>
         </div>
         <div id="choices">
-            <div id="search-username" class="option">@</div>
-            <div id="search-hashtag" class="option">#</div>
-            <div id="search-search" class="option">?</div>
-        </div>
-        <div id="buttonz">
-
-
-             <span id="current-search">@</span><input id="usernamebox" type="text"></input>
-             <br>
-
-            <div id="ajax">
-               launch
+            <div id="username" class="option">
+                @username
+            </div>
+            <div id="hashtag" class="option">
+                #hashtag
+            </div>
+            <div id="search" class="option">
+                search?
             </div>
         </div>
-<div id="footer">another <a href="http://twitter.com/mayeah">@mayeah</a> catastrophe</div>
-<div id="picturebox"></div>
-
-
+        <div id="buttonz">
+            <span id="current-search">@</span><input id="usernamebox" type="text"><br>
+            <div id="ajax">
+                punch it
+            </div>
+        </div>
+        <div id="footer">
+            another <a href="http://twitter.com/mayeah">@mayeah</a> catastrophe
+        </div>
+        <div id="picturebox"></div>
     </body>
 </html>
