@@ -8,8 +8,13 @@ class Tweet
     client
   end
 
-  def self.get_tweets(user)
+  def self.get_tweets_from_user(user)
     client = self.make_client
     client.user_timeline(user, {:count => 200, :include_rts => false})
+  end
+
+  def self.get_tweets_from_hashtag(hashtag)
+    client = self.make_client
+    client.search("#turnt", {:count => 200, :include_rts => false})
   end
 end
