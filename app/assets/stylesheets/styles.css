@@ -28,10 +28,10 @@ body {
 input {
   margin-top: 20px;
   width: 60%;
-  padding: 10px 0px ;
+  padding: 10px 3px ;
 
   font-size: 1em;
-  text-align: center;
+  text-align: left;
   border: 1px solid black;
 }
 
@@ -58,20 +58,14 @@ input {
   background-image: url('deathstar.png');
   background-repeat: no-repeat;
   position: absolute;
-  padding: 0px;
-  font-size: .5em;
-  margin: 0 auto;
-}
-
-.one-tweet p {
-  padding: 10%;
-  width: 60%;
-  color: black;
-
-
+  font-size: .7em;
 }
 
 .one-tweet a{
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  padding-top: 20%;
   color: white;
   text-shadow: 2px 2px 0px black;
   text-decoration: none;

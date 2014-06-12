@@ -78,8 +78,8 @@ function getAjaxTweets(searchterm) {
         data: { searchtype: search }
     }).success(function(data) {
         hideButtons()
-        window[username] = new Tweeter(username, data)
-        startLoopOfTweets(window[username])
+        window[searchterm] = new Tweeter(searchterm, data)
+        startLoopOfTweets(window[searchterm])
     }).error(function(){
         failedAjaxCall()
     });
@@ -101,12 +101,20 @@ function addTweetInRandomSpot(tweet) {
     toPrepend.css({
         transform: 'rotate(' + randomRotation + 'deg)'
     });
-    var tweetWithLink = "<p><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a></p>" + "<div class='username-on-tweet'>@" + tweet.user.screen_name + "</div>"
+    var tweetWithLink = formatTweet(tweet)
     toPrepend.html(tweetWithLink)
-    var test = "hi there hi there"
     $("#tweetbox").append(toPrepend);
 }
 
 function formatTweet(tweet){
+    return "<a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a>" + addUsernameToTweet(tweet)
+}
 
+function addUsernameToTweet(tweet){
+    if (search != "username") {
+        return "<div class='username-on-tweet'><a href='http://twitter.com/" + tweet.user.screen_name + "'>@" + tweet.user.screen_name + "</a></div>"
+    }
+    else {
+        return ""
+    }
 }
