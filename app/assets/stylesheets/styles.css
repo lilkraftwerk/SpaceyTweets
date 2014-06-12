@@ -36,11 +36,10 @@ input {
 }
 
 .username-on-tweet {
-  text-align: center;
+/*  text-align: center;
   color: white;
-  margin: 0 auto;
   text-shadow: 2px 2px 0px black;
-
+*/
 }
 
 #moon {
@@ -54,23 +53,22 @@ input {
   width: 450px;
   height: 450px;
   color: white;
-  background-image: url('deathstar.png');
+  background-image: url('moon2.png');
   background-repeat: no-repeat;
   position: absolute;
-  font-size: .8em;
+  font-size: .7em;
   display: table;
 }
 
 .tweet-container {
-  width: 60%;
+  width: 50%;
+  text-align: center;
   margin-left: 20%;
-
+  padding-top: 20%;
 }
 
 .one-tweet a {
   position: relative;
-  width: 200px;
-  height: 450px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;

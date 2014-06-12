@@ -101,13 +101,15 @@ function addTweetInRandomSpot(tweet) {
     toPrepend.css({
         transform: 'rotate(' + randomRotation + 'deg)'
     });
+    toPrepend.css("background-image", getRandomPlanet())
     var tweetWithLink = formatTweet(tweet)
     toPrepend.html(tweetWithLink)
     $("#tweetbox").append(toPrepend);
 }
 
 function formatTweet(tweet){
-    return "<div class='tweet-container'><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a>" + addUsernameToTweet(tweet) + "</div>"
+    return  "<div class='tweet-container'>"
+    + addUsernameToTweet(tweet) + "<br><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a></div>"
 }
 
 function addUsernameToTweet(tweet){
@@ -117,4 +119,12 @@ function addUsernameToTweet(tweet){
     else {
         return ""
     }
+}
+
+function getRandomPlanet(){
+    var planets = [
+    "asteroid.png", "deathstar.png", "earth.png", "mars.png", "moon2.png", "neptune.png"
+    ]
+    var planet = planets[Math.floor(Math.random() * planets.length)]
+    return "url('assets/" + planet + "')"
 }
