@@ -67,9 +67,9 @@ function failedAjaxCall(){
 
 function addTweetInRandomSpot(tweet) {
     zeeIndex += 1;
-    var randomRotation = Math.floor(Math.random() * 41) - 20;
-    var randomLeft = Math.floor(Math.random() * 15) + 5;
-    var randomTop = Math.floor(Math.random() * 40) + 10;
+    var randomRotation = Math.floor(Math.random() * 35) - 16;
+    var randomLeft = Math.floor(Math.random() * 77) + 2;
+    var randomTop = Math.floor(Math.random() * 60) + 10;
     var toPrepend = $("<div>", {
         class: "one-tweet"
     })
