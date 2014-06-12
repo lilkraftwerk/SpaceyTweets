@@ -16,12 +16,12 @@ body {
 
 #header {
   color:white;
-  text-shadow: 3px 3px 2px black;
+  text-shadow: 2px 2px 1px #F7FD15;
   font-family: 'Orbitron', sans-serif;
   width: 50%;
   margin-left: 25%;
   margin-bottom: 20px;
-  font-size: 5em;
+  font-size: 7em;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@ input {
   margin-top: 20px;
   width: 60%;
   padding: 10px 0px ;
-  margin-left: 20%;
+
   font-size: 1em;
   text-align: center;
   border: 1px solid black;
@@ -51,13 +51,14 @@ input {
   background-repeat: no-repeat;
   position: absolute;
   padding: 30px;
-  font-size: .5em;
+  font-size: .6em;
 }
 
 .one-tweet p {
   padding: 10%;
-  width: 50%;
+  width: 60%;
   color: black;
+
 
 }
 
@@ -85,12 +86,21 @@ input {
   padding: 3px 10px;
   left: 100px;
   display:block;
+  background-color: black;
 
+}
+
+#current-search{
+  width: 20%;
+  display: inline-block;
+  padding-right: 3px;
+  font-size: 2em;
+  text-align: right;
 }
 
 #picturebox {
   padding: 20px;
-  display:block;
+  display:inline;
   position: absolute;
   bottom: 30px;
   right: 100px;
@@ -99,10 +109,12 @@ input {
   margin-bottom: 20px;
   padding: 3px 10px;
   color: white;
+  background-color: black;
 }
 
 #picturebox a{
   color: white;
+  background-color: black;
 }
 
 #footer a {
@@ -113,10 +125,40 @@ input {
   color: #a41e44;
   }
 
+#choices {
+  border: 0px solid black;
+  height: 40px;
+   width: 40%;
+  background-color: white;
+  margin-left: 30%;
+  text-align: center;
+}
 
 #buttonz {
-  width: 50%;
-  margin-left: 25%;
+  width: 40%;
+  background-color: white;
+  margin-left: 30%;
+}
+
+.option {
+  display: inline-block;
+  height: 2em;
+  width: 32.5%;
+  font-size: 1.5em;
+  background-color: pink;
+  margin-top: 4px;
+}
+
+#search-username {
+  background-color: red;
+}
+
+#search-hashtag {
+  background-color: #F0D399;
+}
+
+#search-search {
+  background-color: green;
 }
 
 #buttonz div {

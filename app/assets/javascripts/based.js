@@ -32,6 +32,7 @@ function putTweetOnDom(tweet) {
 function hideButtons() {
     $("#buttonz").hide()
     $("#header").hide()
+    $("#choices").hide()
 }
 
 function bindButtons() {

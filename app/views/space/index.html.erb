@@ -8,14 +8,19 @@
                 <div id="moon">
                     <%= image_tag('moon.png') %>
                 </div>
-            <div id="header">SpaceTweets</div>
+            <div id="header">Starlite Tweets</div>
 
                 <div id="tweetbox"></div>
+        </div>
+        <div id="choices">
+            <div id="search-username" class="option">@</div>
+            <div id="search-hashtag" class="option">#</div>
+            <div id="search-search" class="option">?</div>
         </div>
         <div id="buttonz">
 
 
-             <input id="usernamebox" placeholder="enter a twitter username or hashtag" type="text"></input>
+             <span id="current-search">@</span><input id="usernamebox" type="text"></input>
              <br>
 
             <div id="ajax">
