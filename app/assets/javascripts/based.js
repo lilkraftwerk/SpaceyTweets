@@ -107,7 +107,7 @@ function addTweetInRandomSpot(tweet) {
 }
 
 function formatTweet(tweet){
-    return "<a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a>" + addUsernameToTweet(tweet)
+    return "<div class='tweet-container'><a target='_blank' href='https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str + "/'>" + tweet.text + "</a>" + addUsernameToTweet(tweet) + "</div>"
 }
 
 function addUsernameToTweet(tweet){
