@@ -4,7 +4,6 @@ $(document).ready(function() {
     search = "username"
     populateHiddenPlanets()
     randomButtonText()
-
 })
 
 function Tweeter(name, tweets) {
@@ -81,7 +80,7 @@ function bindButtons(){
 function displayUserProfilePicture(tweeter){
     var profilePic = "<img src='" + tweeter.tweets[0].user.profile_image_url_https + "'>"
     $("#picturebox").html(profilePic)
-    $("#picturebox").append(" tweets from <a href='" + tweeter.tweets[0].user.screen_name + "'>@" + tweeter.name + "</a> ")
+    $("#picturebox").append(" tweets by <a href='" + tweeter.tweets[0].user.screen_name + "'>@" + tweeter.name + "</a> ")
 }
 
 function getAjaxTweets(searchterm) {
@@ -93,6 +92,7 @@ function getAjaxTweets(searchterm) {
         data: { searchtype: search }
     }).success(function(data) {
         hideButtons()
+        $("#picturebox").show()
         window[searchterm] = new Tweeter(searchterm, data)
         startLoopOfTweets(window[searchterm])
     }).error(function(){
@@ -107,9 +107,7 @@ function failedAjaxCall(){
 }
 
 function disableSearchBox(){
-    $("#buttonz").append("<div id='loading'>yolo swag</div>")
-    $("#ajax").hide()
-    $("#tweetbox").html("")
+    $("#ajax").html("Loading...")
 }
 
 function addTweetInRandomSpot(tweet) {
