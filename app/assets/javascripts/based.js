@@ -58,7 +58,10 @@ function showButtons() {
 function bindButtons(){
  $("#ajax").on("click", function() {
         var searchterm = $("#searchbox").val()
-        var tweetsArray = getAjaxTweets(searchterm);
+        if ($("#ajax").hasClass("disabled")) {}
+            else {
+        tweetsArray = getAjaxTweets(searchterm)
+            }
     });
     $(".option").on("click", function(){
         setSearchType(this.id)

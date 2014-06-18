@@ -49,8 +49,11 @@ input {
 #moon {
   height: 300px;
   width: 300px;
-  -webkit-animation: moon 18s ease-out infinite;
   margin-left: 100px;
+  -webkit-animation: moon 18s ease-out infinite;
+  -moz-animation:    moon 18s ease-out infinite;
+  -o-animation:      moon 18s ease-out infinite;
+  animation:         moon 18s ease-out infinite;
 }
 
 .one-tweet{
@@ -232,15 +235,19 @@ input {
 }
 
 @-webkit-keyframes moon {
-    1% {
-    }
-    50%{
-    -webkit-transform: translate(20px, 50px);
-    }
-   99% {
-    }
-   100% {
-  }
+   50%
+   { -webkit-transform: translate(20px, 50px); }
 }
-
+@-moz-keyframes moon {
+   50%
+   { -webkit-transform: translate(20px, 50px); }
+}
+@-o-keyframes moon {
+   50%
+   { -webkit-transform: translate(20px, 50px); }
+}
+@keyframes moon {
+   50%
+   { -webkit-transform: translate(20px, 50px); }
+}
 
