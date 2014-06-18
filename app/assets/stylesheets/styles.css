@@ -26,13 +26,13 @@ body {
 }
 
 input {
-  margin-top: 20px;
   width: 60%;
-  padding: 10px 3px ;
-
-  font-size: 1em;
+  margin: 20px 0;
+  padding: 10px 3px;
+  line-height: 2em;
+  font-size: 2em;
   text-align: left;
-  border: 1px solid black;
+  border: 3px solid black;
 }
 
 .username-on-tweet {
@@ -40,6 +40,10 @@ input {
   color: white;
   text-shadow: 2px 2px 0px black;
 */
+}
+
+#planets {
+  display: none;
 }
 
 #moon {
@@ -74,7 +78,7 @@ input {
   text-align: center;
   color: white;
   font-size: 1em;
-  text-shadow: 2px 2px 0px black;
+  text-shadow: 2px 2px 0 black;
   text-decoration: none;
 }
 
@@ -103,7 +107,6 @@ input {
 #current-search{
   width: 20%;
   display: inline-block;
-  padding-right: 3px;
   font-size: 2em;
   text-align: right;
 }
@@ -153,13 +156,17 @@ input {
 
 .option {
   display: inline-block;
-  height: 2em;
-  width: 32.5%;
-  font-size: 1.5em;
+  height: 100px;
+  width: 90%;
+  font-size: 2.3em;
   background-color: pink;
-  margin-top: 4px;
+  margin-top: 10px;
   vertical-align:middle;
   padding-top: 10px;
+}
+
+#username span {
+  font-size: .7em;
 }
 
 .option:hover {
@@ -170,9 +177,6 @@ input {
   background-color: #cb4949;
 }
 
-#username:hover {
-  background-color: #ff5c5c;
-}
 
 
 #hashtag {
@@ -199,10 +203,16 @@ input {
   background-color: red;
   text-align: center;
   font-size: 2em;
+  line-height: 90px;
   overflow:none;
+  padding: 3px;
 }
 
-#buttonz div:hover {
+#ajax:hover {
+  background-color: pink;
+}
+
+#ajax.disabled {
   background-color: pink;
 }
 
@@ -219,17 +229,12 @@ input {
 @-webkit-keyframes moon {
     1% {
     }
-
-
     50%{
     -webkit-transform: translate(20px, 50px);
-
     }
    99% {
     }
-
    100% {
-
   }
 }
 

@@ -2,6 +2,9 @@ $(document).ready(function() {
     bindButtons()
     zeeIndex = 10
     search = "username"
+    populateHiddenPlanets()
+    randomButtonText()
+
 })
 
 function Tweeter(name, tweets) {
@@ -30,8 +33,6 @@ function putTweetOnDom(tweet) {
     $("#tweetbox").html(tweet)
 }
 
-
-
 function setSearchType(id){
     search = id;
     if (id == "username")
@@ -54,15 +55,28 @@ function showButtons() {
     $("#choices").show()
 }
 
-function bindButtons() {
-    $("#ajax").on("click", function() {
+
+function bindButtons(){
+ $("#ajax").on("click", function() {
         var searchterm = $("#searchbox").val()
         var tweetsArray = getAjaxTweets(searchterm);
-    })
+    });
     $(".option").on("click", function(){
         setSearchType(this.id)
+    });
+    $("#searchbox").keyup(function(){
+       if ($(this).val() == ""){
+        $("#ajax").addClass('disabled')
+        } else {
+        $("#ajax").removeClass('disabled')
+        }
+    })
+    $("#moon").on("click", function(){
+        getCuratedUsername()
+        $("#ajax").removeClass('disabled')
     })
 }
+
 
 function displayUserProfilePicture(tweeter){
     var profilePic = "<img src='" + tweeter.tweets[0].user.profile_image_url_https + "'>"
@@ -71,6 +85,7 @@ function displayUserProfilePicture(tweeter){
 }
 
 function getAjaxTweets(searchterm) {
+    disableSearchBox();
     $.ajax({
         url: "tweetz/" + searchterm,
         dataType: "JSON",
@@ -86,7 +101,15 @@ function getAjaxTweets(searchterm) {
 }
 
 function failedAjaxCall(){
-    $("#tweetbox").html("Oops. Twitter didn't like that. Check your spelling!")
+    $("#loading").hide()
+    $("#tweetbox").html("Uh oh, malfunction! Try one more time.")
+    $("#ajax").show()
+}
+
+function disableSearchBox(){
+    $("#buttonz").append("<div id='loading'>yolo swag</div>")
+    $("#ajax").hide()
+    $("#tweetbox").html("")
 }
 
 function addTweetInRandomSpot(tweet) {
@@ -127,4 +150,44 @@ function getRandomPlanet(){
     ]
     var planet = planets[Math.floor(Math.random() * planets.length)]
     return "url('assets/" + planet + "')"
+}
+
+function randomButtonText(){
+    var randomText = [
+    "Punch it!",
+    "Lightspeed!",
+    "Liftoff!",
+    "Go! Go! Go!",
+    "Do it!",
+    "Engage!",
+    "Get Spacey!",
+    "Make it so!"
+    ]
+    $("#ajax").html(randomText[Math.floor(Math.random() * randomText.length)])
+}
+
+function populateHiddenPlanets(){
+    var planets = [
+    "asteroid.png", "deathstar.png", "earth.png", "mars.png", "moon2.png", "neptune.png"
+    ]
+    for (i = 0; i < planets.length; i++ ){
+        $("#planets").append("<img src='assets/" + planets[i] + "'>")
+    }
+}
+
+function getCuratedUsername(){
+    var tweeters = [
+    "wolfpupy",
+    "dril",
+    "boring_as_heck",
+    "mayeah",
+    "lilbthebasedgod",
+    "horse_ebooks",
+    "barackobama",
+    "desusnice",
+    "KimKierkegaard",
+    "Everyword",
+    "MYSADCAT"
+    ]
+    $("#searchbox").val(tweeters[Math.floor(Math.random() * tweeters.length)])
 }
